@@ -1,4 +1,4 @@
-<div class="panel panel-default ship">
+<!--<div class="panel panel-default ship">
     <div class="panel-heading">
         <h3 class="panel-title">{{ $ctrl.starship.name}}</h3>
 
@@ -13,3 +13,15 @@
         <h3 ng-if="$ctrl.starship.cost_in_credits=='unknown'">precio no disponible</h3>
 
     </div>
+</div> -->
+
+<div class="card animated fadeIn fast" style="width: 18rem;">
+    <img ng-if="$ctrl.bExisteImagen" ng-src="https://starwars-visualguide.com/assets/img/starships/{{$ctrl.shipId}}.jpg" class="card-img-top" alt="{{ $ctrl.starship.name }}">
+    <img ng-if="!$ctrl.bExisteImagen" ng-src="./assets/img/star-wars-no-disponible.jpg" class="card-img-top" alt="No disponible">
+    <div class="card-body">
+        <h5 class="card-title">{{ $ctrl.starship.name }}</h5>
+        <p ng-if="$ctrl.starship.cost_in_credits!='unknown'" class="card-text">{{ $ctrl.starship.cost_in_credits }} créditos</p>
+        <p ng-if="$ctrl.starship.cost_in_credits=='unknown'" class="card-text">precio no disponible</p>
+        <a href="#" class="btn btn-outline-dark">Ficha</a>
+    </div>
+</div>
