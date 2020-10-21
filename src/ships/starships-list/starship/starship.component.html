@@ -1,0 +1,15 @@
+<div class="panel panel-default ship">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ $ctrl.starship.name}}</h3>
+
+    </div>
+    <div class="panel-body">
+        <img ng-if="$ctrl.bExisteImagen" ng-src="https://starwars-visualguide.com/assets/img/starships/{{$ctrl.shipId}}.jpg">
+        <h3 ng-if="!$ctrl.bExisteImagen" class="panel-body">Imagen no disponible</h3>
+
+    </div>
+    <div>
+        <h3 ng-if="$ctrl.starship.cost_in_credits!='unknown'">{{ $ctrl.starship.cost_in_credits }} credits</h3>
+        <h3 ng-if="$ctrl.starship.cost_in_credits=='unknown'">precio no disponible</h3>
+
+    </div>
